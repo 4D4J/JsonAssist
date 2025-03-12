@@ -1,19 +1,9 @@
-
-"""
-
-JSONUTILITIES IS A OPENSOURCE LIBRAIRIE FOR PYTHON, IT'S BASE ON PY 3.12.5
-THE OBJECTIF IS TO HAVE A BETTER EXPERIENCE WITH JSON FILES, THE LIBRAIRIE IS THE PERFECT OPTION TO HAVE GOOD EXPERIENCE 
-WITH JSON FILES
-
-DEV BY RAPIDO, ALL RIGHT RESERVED
-"""
-
 def is_file_exist(file):
     try:
         with open(file, "r"):
             return True
     except (FileNotFoundError, SyntaxError, ValueError):
-        print("The file doesn't exist, Please check the file name or location")
+        print("The file doesn't exists, Please check the file name or location")
         return False
 
 
@@ -63,24 +53,24 @@ def get_value_of_key(file):
     return None
 
 
-def get_value_of_one_key(file, val):
+def check_value_of_one_key(file, val):
     value = get_value_of_key(file)
     if value:
         for v in value:
             if val == v:
                 print(f"'{val}' exist in the config file")
                 return v
-    return f"The value '{val}' doesn't exist in the config file"
+    return f"The value '{val}' doesn't exists in the config file"
         
 
-def get_one_key(file, key):
+def check_one_key_in_file(file, key):
     data = get_data_of_file(file)
     if data and "config" in data:
         one_key = list(data["config"].keys())
         if key in one_key:
-            print(f"'{key}' exist in the config file")
+            print(f"'{key}' exists in the config file")
             return key
-        return f"The key '{key}' doesn't exist in the config file"
+        return f"The key '{key}' doesn't exists in the config file"
 
 
 def change_value_of_key(file, key, new_val):
@@ -93,6 +83,4 @@ def change_value_of_key(file, key, new_val):
                 open_file.write(updated_content)
             print(f"The value of the key '{key}' has been successfully updated by '{new_val}'.")
         else:
-            print(f"The key '{key}' does not exist in the configuration file.")
-
-
+            print(f"The key '{key}' does not exists in the configuration file.")
