@@ -84,3 +84,7 @@ def change_value_of_key(file, key, new_val):
             print(f"The value of the key '{key}' has been successfully updated by '{new_val}'.")
         else:
             print(f"The key '{key}' does not exists in the configuration file.")
+
+
+            
+# AUTHOR : Rapido
